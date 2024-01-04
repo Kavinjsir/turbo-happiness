@@ -1,0 +1,105 @@
+# Visit https://docs.rilldata.com/reference/project-files to learn more about Rill project files.
+
+title: economic_cities_cn_new_dashboard
+model: economic_cities_cn_new_model
+timeseries: ""
+measures:
+  - label: Total records
+    expression: count(*)
+    name: total_records
+    description: Total number of records present
+    format_preset: humanize
+    valid_percent_of_total: true
+dimensions:
+  - name: Country Name
+    label: Country Name
+    column: Country Name
+    description: ""
+  - name: Country Code
+    label: Country Code
+    column: Country Code
+    description: ""
+  - name: Series Name
+    label: Series Name
+    column: Series Name
+    description: ""
+  - name: Series Code
+    label: Series Code
+    column: Series Code
+    description: ""
+  - name: 2000 [YR2000]
+    label: 2000 [YR2000]
+    column: 2000 [YR2000]
+    description: ""
+  - name: 2001 [YR2001]
+    label: 2001 [YR2001]
+    column: 2001 [YR2001]
+    description: ""
+  - name: 2002 [YR2002]
+    label: 2002 [YR2002]
+    column: 2002 [YR2002]
+    description: ""
+  - name: 2003 [YR2003]
+    label: 2003 [YR2003]
+    column: 2003 [YR2003]
+    description: ""
+  - name: 2004 [YR2004]
+    label: 2004 [YR2004]
+    column: 2004 [YR2004]
+    description: ""
+  - name: 2005 [YR2005]
+    label: 2005 [YR2005]
+    column: 2005 [YR2005]
+    description: ""
+  - name: 2006 [YR2006]
+    label: 2006 [YR2006]
+    column: 2006 [YR2006]
+    description: ""
+  - name: 2007 [YR2007]
+    label: 2007 [YR2007]
+    column: 2007 [YR2007]
+    description: ""
+  - name: 2008 [YR2008]
+    label: 2008 [YR2008]
+    column: 2008 [YR2008]
+    description: ""
+  - name: 2009 [YR2009]
+    label: 2009 [YR2009]
+    column: 2009 [YR2009]
+    description: ""
+  - name: 2010 [YR2010]
+    label: 2010 [YR2010]
+    column: 2010 [YR2010]
+    description: ""
+  - name: 2011 [YR2011]
+    label: 2011 [YR2011]
+    column: 2011 [YR2011]
+    description: ""
+  - name: 2012 [YR2012]
+    label: 2012 [YR2012]
+    column: 2012 [YR2012]
+    description: ""
+  - name: 2013 [YR2013]
+    label: 2013 [YR2013]
+    column: 2013 [YR2013]
+    description: ""
+  - name: 2014 [YR2014]
+    label: 2014 [YR2014]
+    column: 2014 [YR2014]
+    description: ""
+  - name: 2015 [YR2015]
+    label: 2015 [YR2015]
+    column: 2015 [YR2015]
+    description: ""
+available_time_zones:
+  - America/Los_Angeles
+  - America/Chicago
+  - America/New_York
+  - Europe/London
+  - Europe/Paris
+  - Asia/Jerusalem
+  - Europe/Moscow
+  - Asia/Kolkata
+  - Asia/Shanghai
+  - Asia/Tokyo
+  - Australia/Sydney
