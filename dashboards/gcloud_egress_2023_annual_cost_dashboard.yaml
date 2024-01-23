@@ -1,0 +1,43 @@
+# Visit https://docs.rilldata.com/reference/project-files to learn more about Rill project files.
+
+title: gcloud_egress_2023_annual_cost_dashboard
+model: gcloud_egress_2023_annual_cost_model
+timeseries: date
+measures:
+  - label: Sum(cost)
+    expression: sum(cost)
+    name: sum(cost)
+    description: Sum of Cost
+    format_preset: humanize
+    valid_percent_of_total: true
+  - label: Sum(usage_gib)
+    expression: sum(usage_gib)
+    name: sum(usage_gib)
+    description: Sum of Usage_gib
+    format_preset: humanize
+    valid_percent_of_total: true
+dimensions:
+  - name: env
+    label: Env
+    column: env
+    description: ""
+  - name: nodepool
+    label: Nodepool
+    column: nodepool
+    description: ""
+  - name: description
+    label: Description
+    column: description
+    description: ""
+available_time_zones:
+  - America/Los_Angeles
+  - America/Chicago
+  - America/New_York
+  - Europe/London
+  - Europe/Paris
+  - Asia/Jerusalem
+  - Europe/Moscow
+  - Asia/Kolkata
+  - Asia/Shanghai
+  - Asia/Tokyo
+  - Australia/Sydney
