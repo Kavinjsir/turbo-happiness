@@ -1,1 +1,0 @@
-select * from housing_price_dataset

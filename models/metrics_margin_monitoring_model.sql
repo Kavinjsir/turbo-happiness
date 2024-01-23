@@ -1,1 +1,0 @@
-select * from metrics_margin_monitoring
