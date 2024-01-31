@@ -1,5 +1,5 @@
-## External Deps
 
+## External Deps
 ### 1. Deep storage
 
 Druid uses deep storage to store any data that has been ingested into the system.
@@ -145,9 +145,6 @@ The operations that happen over ZK are:
 ${druid.zk.paths.coordinatorPath}/_COORDINATOR
 ```
 
----
-**TODO: Continue read from here**
-
 ## Storage Design
 
 ### Datasources and segments
@@ -186,7 +183,8 @@ These entries tell the Coordinator what data is available on the cluster.
 
 ### Indexing and handoff
 
-Indexing is the mechanism by which new segments are created, and handoff is the mechanism by which they are published and begin being served by Historical processes.
+Indexing is the mechanism by which new segments are created.
+And handoff is the mechanism by which they are published and begin being served by Historical processes.
 On the indexing side:
 1. An indexing task starts running and building a new segment.
    It must determine the identifier of the segment before it starts building it.
@@ -214,7 +212,11 @@ Segments all have a four-part identifier with the following components:
 - Version number (generally an ISO8601 timestamp corresponding to when the segment set was first started).
 - Partition number (an integer, unique within a datasource+interval+version; may not necessarily be contiguous).
 
-For example, this is the identifier for a segment in datasource `clarity-cloud0`, time chunk `2018-05-21T16:00:00.000Z/2018-05-21T17:00:00.000Z`, version `2018-05-21T15:56:09.909Z`, and partition number 1:
+For example, this is the identifier for a segment in
+- datasource `clarity-cloud0`
+- time chunk `2018-05-21T16:00:00.000Z/2018-05-21T17:00:00.000Z`
+- version `2018-05-21T15:56:09.909Z`
+- partition number 1:
 ```
 clarity-cloud0_2018-05-21T16:00:00.000Z_2018-05-21T17:00:00.000Z_2018-05-21T15:56:09.909Z_1
 ```
@@ -246,7 +248,7 @@ Then it drops the old segments a few minutes later.
 Each segment has a lifecycle that involves the following three major areas:
 
 1. `Metadata store`: Segment metadata (a small JSON payload generally no more than a few KB) is stored in the metadata store once a segment is done being constructed.
-   The act of inserting a record for a segment into the metadata store is called publishing.
+   The act of inserting a record for a segment into the metadata store is called **publishing**.
    These metadata records have a boolean flag named used, which controls whether the segment is intended to be queryable or not.
    Segments created by realtime tasks will be available before they are published, since they are only published when the segment is complete and will not accept any additional rows of data.
 2. `Deep storage`: Segment data files are pushed to deep storage once a segment is done being constructed.
@@ -338,116 +340,4 @@ So Druid uses three different techniques to maximize query performance:
 - Pruning the set of segments accessed for a query.
 - Within each segment, using indexes to identify which rows must be accessed.
 - Within each segment, only reading the specific rows and columns that are relevant to a particular query.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
